@@ -1218,6 +1218,31 @@ export default {
         borderVisible: true,
       });
 
+      mainSeries.setMarkers([
+        {
+          time: candleStickData[candleStickData.length - 5].time,
+          position: 'aboveBar',
+          color: 'black',
+          shape: 'arrowDown',
+        },
+        {
+          time: candleStickData[candleStickData.length - 10].time,
+          position: 'belowBar',
+          color: 'red',
+          shape: 'arrowUp',
+          id: 'id3',
+        },
+        {
+          time: candleStickData[candleStickData.length - 6].time,
+          position: 'belowBar',
+          color: 'orange',
+          shape: 'arrowUp',
+          id: 'id4',
+          text: 'example',
+          size: 2,
+        },
+      ]);
+
       // Adjust the options for the priceScale of the mainSeries
       mainSeries.priceScale().applyOptions({
         autoScale: false, // disables auto scaling based on visible content
